@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="rect">
+
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var a = 100;
+
+    (function(){
+        $('.rect').append(a +'<br>');
+    })();
+
+    (function(){
+        $('.rect').append(a);
+    }());
+
+
+
+    var Shin = {
+        age: 32,
+        eat: function(something){
+            console.log(something + '真好吃');
+        }
+
+
+
+    };
+
+    Shin.eat('雞腿');
+</script>
+</body>
+</html>

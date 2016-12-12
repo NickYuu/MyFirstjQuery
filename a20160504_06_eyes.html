@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .eye {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+         }
+        .eye-pic {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: -50px;
+            top: -50px;
+            background-image: url(img/eye.png);
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <div class="eye">
+        <div class="eye-pic">
+        </div>
+    </div>
+
+    <div class="eye" style="left:500px">
+        <div class="eye-pic">
+        </div>
+    </div>
+    <div class="eye" style="left:700px">
+        <div class="eye-pic">
+        </div>
+    </div>
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, x, y;
+    var rect = $('.rect');
+    var tx=0, ty=0;
+    var eyes = $('.eye');
+
+
+    $(window).mousemove(function(event){
+        tx = event.clientX;
+        ty = event.clientY;
+    });
+
+    var eyeRoll = function(){
+        eyes.each(function(){
+            var dx = tx - $(this).position().left;
+            var dy = ty - $(this).position().top;
+            var ang = parseInt( Math.atan2(dy, dx)/Math.PI*180 );
+
+            $(this).css('transform', 'rotate('+ ang +'deg)');
+        });
+
+        setTimeout(eyeRoll, 30);
+    };
+    eyeRoll();
+
+</script>
+</body>
+</html>

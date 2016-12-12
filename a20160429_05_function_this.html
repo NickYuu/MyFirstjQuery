@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #7985ff;
+            line-height: 60px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <div class="ball">1</div>
+    <div class="ball" style="left:100px;top:100px">2</div>
+    <div class="ball" style="left:200px;top:100px">3</div>
+</div>
+
+<button id="myb">hihi</button>
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+//    $('.ball').click(function(){
+//        console.log(this);
+//        console.log($(this));
+//        console.log($(this)[0]);
+//        alert( $(this).text() );
+//    });
+
+    var handle = function(){
+        console.log(this);
+        console.log($(this));
+        console.log($(this)[0]);
+        alert( $(this).text() );
+    };
+
+    $('.ball').click(handle);
+    //$('button').click(handle);
+    // handle();
+
+    window.document.getElementById('myb').addEventListener('click', handle);
+
+
+
+</script>
+</body>
+</html>

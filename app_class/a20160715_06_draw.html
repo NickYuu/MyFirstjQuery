@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cont {
+            width: 800px;
+            height:600px;
+            background-color: #b7b7b7;
+
+            position: relative;
+
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: red;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cont">
+</div>
+<button>get data</button>
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var cont = $('.cont');
+    var ball;
+    var mx, my;
+    var isDown = false;
+    var ar = [];
+
+    var myMDown = function(event){
+        cont.on('mousemove', myMMove);
+        mx = event.pageX;
+        my = event.pageY;
+        console.log(event);
+        isDown = true;
+        drawBall();
+    };
+
+    var myMUp = function(event){
+        cont.off('mousemove', myMMove);
+        isDown = false;
+    };
+    var myMMove = function(event){
+        mx = event.pageX;
+        my = event.pageY;
+    };
+
+    var drawBall = function(){
+        ball = $('<div class="ball"></div>');
+        var size = parseInt(12 + Math.random() * 19);
+        var rr = parseInt(Math.random()*256);
+        var gg = parseInt(Math.random()*256);
+        var bb = parseInt(Math.random()*256);
+        var bgc = 'rgb('+rr+','+gg+','+bb+')';
+
+        ar.push({
+            x: mx,
+            y: my,
+            size: size,
+            bgc: bgc
+        });
+        ball.css({left:mx,
+            top:my,
+            width: size,
+            height: size,
+            'background-color': bgc
+        });
+        cont.append(ball);
+        if(isDown){
+            setTimeout(drawBall, 60);
+        }
+    };
+
+    cont.on('mousedown', myMDown);
+    $(window).on('mouseup', myMUp);
+
+
+    $('button').click(function(){
+        console.log(JSON.stringify(ar));
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cont {
+            width: 600px;
+            height:400px;
+            background-color: #b7b7b7;
+
+            position: relative;
+
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cont">
+</div>
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var cont = $('.cont');
+    var ball;
+    var myMDown = function(event){
+        cont.on('mousemove', myMMove);
+        console.log(event);
+    };
+
+    var myMUp = function(evt){
+        cont.off('mousemove', myMMove);
+    };
+    var myMMove = function(event){
+        console.log(event.clientX, event.clientY);
+
+        ball = $('<div class="ball"></div>');
+        ball.css({left:event.pageX, top:event.pageY});
+        cont.append(ball);
+    };
+
+    cont.on('mousedown', myMDown);
+    $(window).on('mouseup', myMUp);
+
+//$(window).on('mousedown')
+
+/*
+問題一: mousedown 時，要出現球
+問題二: 球出現的時候要往下掉到消失
+
+
+ */
+
+
+
+
+</script>
+</body>
+</html>

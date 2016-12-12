@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background-color: #ddebff;
+        }
+        .hand {
+            position: absolute;
+            left: 210px;
+            top: 210px;
+        }
+/*        .sec-pic {
+            position: absolute;
+            height: 200px;
+            width: 4px;
+            background-color: red;
+            border-radius: 2px;
+            top: -198px;
+            left: -2px;
+        }*/
+        .sec-pic {
+            position: absolute;
+            height: 150px;
+            width: 50px;
+            background-image: url("img/mario_bro.png");
+            top: -147px;
+            left: -25px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="clock">
+    <div class="hand sec-hand">
+        <div class="sec-pic"></div>
+    </div>
+
+</div>
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    var rect = $('.rect');
+
+
+    // $('.hand').css('transform', 'rotate(30deg)');
+
+    //$('.hand').css({transform:'rotate(30deg)'});
+
+
+
+
+    var runClock = function(){
+        var now = new Date();
+        var sec = now.getSeconds();
+        $('.sec-hand').css('transform', 'rotate('+ sec*6 +'deg)');
+
+        setTimeout(runClock, 1000);
+    };
+
+    runClock();
+
+//    function digi2(n) {
+//        n = ''+n;
+//        if(n.length<2){
+//            return '0'+n;
+//        } else {
+//            return n;
+//        }
+//    }
+
+//    function digi2(n) {
+//        n = ''+n;
+//        return  (n.length<2) ?  ('0'+n) : n;
+//    }
+
+</script>
+</body>
+</html>

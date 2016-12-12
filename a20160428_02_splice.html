@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="rect">
+    <!--<div class="ball"></div>-->
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var rect = $('.rect');
+
+    var ar = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff',];
+    var cr = ar.concat();
+    rect.append( cr.splice(1, 2) + '<br>' );
+    rect.append( cr + '<br>' );
+
+    cr = ar.concat();
+    rect.append( cr.splice(2, 0, 'bill', 'peter') + '<br>' );
+    rect.append( cr + '<br>' );
+
+    cr = ar.concat();
+    rect.append( cr.splice(2, 2, 'bill', 'peter') + '<br>' );
+    rect.append( cr + '<br>' );
+
+
+
+</script>
+</body>
+</html>

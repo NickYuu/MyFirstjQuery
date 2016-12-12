@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cont {
+            width: 800px;
+            height:600px;
+            background-color: #b7b7b7;
+
+            position: relative;
+
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: red;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cont">
+</div>
+<button>get data</button>
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var cont = $('.cont');
+    var ball;
+    var mx, my;
+    var bIndex = 0;
+    var ar;
+
+
+
+    var drawBall = function(){
+        ball = $('<div class="ball"></div>');
+
+        var obj = ar[bIndex];
+
+        ball.css({left: obj.x,
+            top: obj.y,
+            width: obj.size,
+            height: obj.size,
+            'background-color': obj.bgc
+        });
+        cont.append(ball);
+        bIndex++;
+
+        if(bIndex<ar.length){
+            setTimeout(drawBall, 60);
+        }
+    };
+
+    $.get('mydata.json', function(data){
+        ar = data;
+        drawBall();
+    }, 'json');
+
+</script>
+</body>
+</html>

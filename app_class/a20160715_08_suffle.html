@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="cont">
+</div>
+
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var ar = [];
+    var i, a, b, t, r;
+    var cont = $('.cont');
+
+    for(i=1; i<=46; i++) {
+        ar.push(i);
+    }
+
+    for(i=0; i<ar.length; i++) {
+        t = ar[i];
+        r = parseInt(Math.random() * ar.length);
+        //console.log(r, )
+        ar[i] = ar[r];
+        ar[r] = t;
+    }
+
+
+    cont.append(ar.join(','));
+</script>
+</body>
+</html>

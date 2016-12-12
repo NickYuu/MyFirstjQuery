@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            position: relative;
+            width:800px;
+            height:600px;
+            background-color: rgba(171, 255, 70, 0.25);
+        }
+        .girl {
+            position: absolute;
+            background-image: url(girl.png);
+            /*background-position-x: -80px;*/
+            width: 80px;
+            height: 80px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+<div class="container">
+
+</div>
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var i, x, y;
+    var girl;
+    var cont = $('.container');
+
+    for(i=0; i<11; i++){
+
+        x = Math.random()*720;
+        y = Math.random()*520;
+
+
+        girl = $('<div class="girl"></div>');
+        //girl.css({left: 100 * x, top: 120 * y});
+        girl.attr('mx', x); // data-mx
+        girl.attr('my', y);
+        girl.css({left:360, top:260});
+        cont.append( girl );
+
+
+
+    }
+
+    cont.click(function(){
+        $('.girl').each(function(index){
+            var mx = $(this).attr('mx');
+            var my = $(this).attr('my');
+            $(this).delay(index*100).animate({left:mx, top:my}, 1000);
+        });
+
+
+
+    });
+
+
+</script>
+
+</body>
+</html>

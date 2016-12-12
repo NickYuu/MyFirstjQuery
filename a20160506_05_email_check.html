@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form name="form1">
+    <input type="text" name="email">
+    <button type="button" id="btn" onclick="myclick()">check</button>
+
+</form>
+
+<script>
+    var pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    function myclick() {
+        var str = document.form1.email.value;
+        alert(pattern.test(str));
+
+    }
+</script>
+
+
+
+</body>
+</html>

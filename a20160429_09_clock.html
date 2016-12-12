@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background-color: #ddebff;
+        }
+        .hand {
+            position: absolute;
+            left: 210px;
+            top: 210px;
+        }
+/*        .sec-pic {
+            position: absolute;
+            height: 200px;
+            width: 4px;
+            background-color: red;
+            border-radius: 2px;
+            top: -198px;
+            left: -2px;
+        }*/
+        .sec-pic {
+            position: absolute;
+            height: 150px;
+            width: 50px;
+            background-image: url("img/mario_bro.png");
+            top: -147px;
+            left: -25px;
+        }
+        .min-pic {
+            position: absolute;
+            height: 180px;
+            width: 6px;
+            background-color: #3132ff;
+            border-radius: 3px;
+            top: -177px;
+            left: -3px;
+        }
+        .hr-pic {
+            position: absolute;
+            height: 140px;
+            width: 8px;
+            background-color: red;
+            border-radius: 4px;
+            top: -136px;
+            left: -4px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="clock">
+    <div class="hand hr-hand">
+        <div class="hr-pic"></div>
+    </div>
+    <div class="hand min-hand">
+        <div class="min-pic"></div>
+    </div>
+    <div class="hand sec-hand">
+        <div class="sec-pic"></div>
+    </div>
+</div>
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    var rect = $('.rect');
+
+    // $('.hand').css('transform', 'rotate(30deg)');
+
+    //$('.hand').css({transform:'rotate(30deg)'});
+
+    var runClock = function(){
+        var now = new Date();
+        var msec = now.getMilliseconds();
+        var sec = now.getSeconds();
+        var min = now.getMinutes();
+        var hr = now.getHours();
+
+        $('.hr-hand').css('transform', 'rotate('+ (hr*30+min*.5) +'deg)');
+        $('.min-hand').css('transform', 'rotate('+ min*6 +'deg)');
+        $('.sec-hand').css('transform', 'rotate('+ (sec+msec/1000)*6 +'deg)');
+
+        setTimeout(runClock, 30);
+    };
+
+    runClock();
+
+//    function digi2(n) {
+//        n = ''+n;
+//        if(n.length<2){
+//            return '0'+n;
+//        } else {
+//            return n;
+//        }
+//    }
+
+//    function digi2(n) {
+//        n = ''+n;
+//        return  (n.length<2) ?  ('0'+n) : n;
+//    }
+
+</script>
+</body>
+</html>

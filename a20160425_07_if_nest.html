@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text" id="ia">
+    <button type="button" id="btn">Click</button>
+</form>
+
+<div id="mydiv"></div>
+
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    $('#btn').click(function(){
+        var g;
+        var ia = parseInt( $('#ia').val() );
+
+        if(ia>=90 ){
+            g = 'A';
+        } else  if(ia>=80 ) {
+            g = 'B';
+        } else  if(ia>=70 ) {
+            g = 'C';
+        } else  if(ia>=60 ) {
+            g = 'D';
+        } else {
+            g = 'F';
+        }
+
+        $('#mydiv').text( g );
+    });
+
+</script>
+</body>
+</html>

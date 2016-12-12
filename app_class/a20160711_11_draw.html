@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cont {
+            width: 600px;
+            height:400px;
+            background-color: #b7b7b7;
+
+            position: relative;
+
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: red;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cont">
+</div>
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var cont = $('.cont');
+    var ball;
+    var mx, my;
+    var isDown = false;
+
+    var myMDown = function(event){
+        cont.on('mousemove', myMMove);
+        mx = event.pageX;
+        my = event.pageY;
+        console.log(event);
+        isDown = true;
+        drawBall();
+    };
+
+    var myMUp = function(event){
+        cont.off('mousemove', myMMove);
+        isDown = false;
+    };
+    var myMMove = function(event){
+        mx = event.pageX;
+        my = event.pageY;
+    };
+
+    var drawBall = function(){
+        ball = $('<div class="ball"></div>');
+        ball.css({left:mx, top:my});
+        cont.append(ball);
+        if(isDown){
+            setTimeout(drawBall, 60);
+        }
+    };
+
+    cont.on('mousedown', myMDown);
+    $(window).on('mouseup', myMUp);
+
+
+
+
+</script>
+</body>
+</html>

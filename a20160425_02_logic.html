@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var b = true;
+    var a = 100;
+    var mydiv = $('#mydiv');
+
+    mydiv.append( (true || true) + '<br>' );
+    mydiv.append( (true || false) + '<br>' );
+    mydiv.append( (false || true) + '<br>' );
+    mydiv.append( (false || false) + '<br>' );
+
+    mydiv.append( (true && true) + '<br>' );
+    mydiv.append( (true && false) + '<br>' );
+    mydiv.append( (false && true) + '<br>' );
+    mydiv.append( (false && false) + '<br>' );
+
+    var c = a || 1;
+    mydiv.append( c + '<br>' );
+    a = false;
+    c = a || 9;
+    mydiv.append( c + '<br>' );
+
+</script>
+</body>
+</html>

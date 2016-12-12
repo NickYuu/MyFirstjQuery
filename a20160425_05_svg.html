@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="560px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
+<path id="mypath" fill="#00D416" d="M261.911,166.873c-39.843,0-72.498,30.687-75.674,69.711l-34.956,6.564l28.728,25.776l-4.948,38.278
+	l28.079-16.276c13.929,16.997,35.081,27.847,58.771,27.847c41.946,0,75.95-34.004,75.95-75.95S303.857,166.873,261.911,166.873z"/>
+</svg>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    $('#mypath').mouseover(function(){
+        $(this).attr('fill', '#FF0000');
+    });
+    $('#mypath').mouseout(function(){
+        $(this).attr('fill', '#00D416');
+    });
+</script>
+</body>
+</html>

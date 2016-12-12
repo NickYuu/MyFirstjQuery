@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .face {
+            position: relative;
+            width:400px;
+            height:400px;
+            background-color: rgba(255, 170, 69, 0.25);
+            border-radius: 50%;
+        }
+        .eye {
+            position: absolute;
+            left:100px;
+            top:150px;
+        }
+        .eye-white {
+            position: absolute;
+            width:80px;
+            height:80px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            left: -40px;
+            top: -40px;
+        }
+        .eye-black {
+            position: absolute;
+            width:40px;
+            height:40px;
+            background-color: rgba(16, 17, 71, 0.68);
+            border-radius: 50%;
+            left: 0px;
+            top: -20px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+<div class="face">
+    <div class="eye">
+        <div class="eye-white"></div>
+        <div class="eye-black"></div>
+    </div>
+
+    <div class="eye" style="left:300px">
+        <div class="eye-white"></div>
+        <div class="eye-black"></div>
+    </div>
+    <div class="eye" style="top:250px">
+        <div class="eye-white"></div>
+        <div class="eye-black"></div>
+    </div>
+
+    <div class="eye" style="left:300px;top:250px">
+        <div class="eye-white"></div>
+        <div class="eye-black"></div>
+    </div>
+</div>
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var eyes = $('.eye');
+
+    $(window).on('mousemove', function(event){
+        var px = event.pageX;
+        var py = event.pageY;
+
+        eyes.each(function(){
+            var dx = px - $(this).position().left;
+            var dy = py - $(this).position().top;
+
+            var ang = Math.atan2(dy, dx) /Math.PI *180;
+
+            $(this).css('transform', 'rotate('+ang+'deg)');
+
+
+        });
+
+
+    });
+
+
+
+
+//    var i, x, y;
+//    var girl;
+//    var cont = $('.container');
+//
+//    for(i=0; i<11; i++){
+//
+//        x = Math.random()*720;
+//        y = Math.random()*520;
+//
+//
+//        girl = $('<div class="girl"></div>');
+//        //girl.css({left: 100 * x, top: 120 * y});
+//        girl.attr('mx', x); // data-mx
+//        girl.attr('my', y);
+//        girl.css({left:360, top:260});
+//        cont.append( girl );
+//
+//
+//
+//    }
+//
+//    cont.click(function(){
+//        $('.girl').each(function(index){
+//            var mx = $(this).attr('mx');
+//            var my = $(this).attr('my');
+//            $(this).delay(index*100).animate({left:mx, top:my}, 1000);
+//        });
+//
+//
+//
+//    });
+
+
+</script>
+
+</body>
+</html>

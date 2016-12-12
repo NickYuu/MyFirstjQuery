@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="rect">
+    <div class="ball">1</div>
+    <div class="ball" style="left:100px;top:100px">2</div>
+    <div class="ball" style="left:200px;top:100px">3</div>
+</div>
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    var rect = $('.rect');
+
+
+    var runClock = function(){
+        var now = new Date();
+        rect.text(
+                digi2(now.getHours())+
+                ":"+
+                digi2(now.getMinutes())+
+                ":"+
+                digi2(now.getSeconds())
+        );
+        setTimeout(runClock, 1000);
+    };
+
+    runClock();
+
+//    function digi2(n) {
+//        n = ''+n;
+//        if(n.length<2){
+//            return '0'+n;
+//        } else {
+//            return n;
+//        }
+//    }
+
+    function digi2(n) {
+        n = ''+n;
+        return  (n.length<2) ?  ('0'+n) : n;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .girl {
+            background-image: url(girl.png);
+            /*background-position-x: -80px;*/
+            width: 80px;
+            height: 80px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+<!--<img src="girl.png" alt="">-->
+<div class="girl">
+
+</div>
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+    var frames = 8;
+    var idx = 0;
+    var girl = $('.girl');
+    function ani(){
+        // 0: 0, 0
+        // 1: -80, 0
+        // 2: -160, 0
+        // 3: 0, -80
+        // 4: -80, -80
+
+        var ax = idx % 3;
+        var ay = parseInt(idx/3);
+
+        girl.css('background-position-x', ax * -80);
+        girl.css('background-position-y', ay * -80);
+
+        idx++;
+        idx %= frames;
+        setTimeout(ani, 60);
+    }
+    ani();
+
+</script>
+
+</body>
+</html>

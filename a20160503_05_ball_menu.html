@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+                     position: absolute;
+                     border-radius: 50%;
+                     width: 60px;
+                     height: 60px;
+                     background-color: #7985ff;
+                     line-height: 60px;
+                     text-align: center;
+                     /*left: 0px;*/
+            /*top: 0px;*/
+         }
+        .big-ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #2945ff;
+            line-height: 60px;
+            text-align: center;
+            left: 360px;
+            top: 260px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <div class="big-ball"></div>
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, x, y;
+    var rect = $('.rect');
+    var ballNum = 12;
+    var angUnit = 2*Math.PI/ballNum;
+
+    var isOpen = false;
+
+    for(i=0; i<ballNum; i++) {
+        x = 400+200*Math.cos(angUnit*i)-30;
+        y = 300+200*Math.sin(angUnit*i)-30;
+
+        ball = $('<div class="ball"></div>');
+        ball.css({left:370, top:270});
+        ball.text(i);
+        $('.big-ball').before(ball);
+        ball.attr('bx', 370);
+        ball.attr('by', 270);
+        ball.attr('ex', parseInt(x));
+        ball.attr('ey', parseInt(y));
+        // ball.delay(300*i).animate({left:x, top:y}, 800, 'easeOutBounce');
+    }
+
+    $('.big-ball').click(function(){
+        isOpen = ! isOpen;
+
+        $('.ball').each(function(index){
+            var x = isOpen ? parseInt( $(this).attr('ex') ) : parseInt( $(this).attr('bx') );
+            var y = isOpen ? parseInt( $(this).attr('ey') ) : parseInt( $(this).attr('by') );
+
+            var easing = isOpen ? 'easeOutBounce' : 'swing';
+            $(this).delay(300*index).animate({left:x, top:y}, 800, easing);
+        });
+
+
+
+    });
+
+</script>
+</body>
+</html>

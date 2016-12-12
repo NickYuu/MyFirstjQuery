@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #7985ff;
+            line-height: 60px;
+            text-align: center;
+        }
+        .big-ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #2945ff;
+            line-height: 60px;
+            text-align: center;
+            left: 360px;
+            top: 260px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <div class="big-ball">
+        <!--<div class="ball" onclick="console.log(event)">-->
+        <div class="ball">
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, x, y;
+    var rect = $('.rect');
+
+    /*
+     var ball = document.getElementsByClassName('ball')[0];
+     //console.log(ball);
+
+     ball.addEventListener('click', function(){
+
+     });
+     */
+    $('.rect').click(function(event){
+        console.log(2);
+        console.log(event);
+    });
+
+    $('.ball').click(function(event){
+
+        console.log(1);
+        console.log(event);
+    });
+
+
+
+</script>
+</body>
+</html>

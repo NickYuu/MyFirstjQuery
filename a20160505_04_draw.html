@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #f9ffdb;
+        }
+        .ball {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background-color: #2945ff;
+            border: solid 1px black;
+            border-radius: 50%;
+         }
+
+    </style>
+</head>
+<body>
+
+<div class="rect">
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, tx, ty, eye;
+    var rect = $('.rect');
+    var isDown = false;
+
+
+
+    var mouseDown = function(event){
+        tx = event.pageX;
+        ty = event.pageY;
+        isDown = true;
+        $(window).on('mousemove', mouseMove);
+        doDraw();
+    };
+    var mouseUp = function(event){
+        isDown = false;
+        $(window).off('mousemove');
+    };
+    var mouseMove = function(event){
+        tx = event.pageX;
+        ty = event.pageY;
+    };
+
+    var drwaBall = function(x, y){
+        var size = 6 + parseInt(Math.random()*21);
+        var r = parseInt(256*Math.random());
+        var g = parseInt(256*Math.random());
+        var b = parseInt(256*Math.random());
+
+        ball = $('<div class="ball"></div>');
+        ball.css({
+            left: x-size/2,
+            top: y-size/2,
+            width: size,
+            height: size,
+            "background-color": 'rgb('+r+','+g+','+b+')'
+        });
+
+        rect.append(ball);
+        // ball.fadeOut(2000);
+    };
+
+    var doDraw = function(){
+        drwaBall(tx, ty);
+        if(isDown){
+            setTimeout(doDraw, 30);
+        }
+    };
+
+    rect.mousedown(mouseDown);
+    $(window).mouseup(mouseUp);
+
+</script>
+</body>
+</html>

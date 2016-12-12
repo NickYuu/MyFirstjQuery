@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="myt">
+</div>
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var myt = $('#myt');
+    var obj = {a:12, name:"bill", c:true};
+    var s;
+
+
+    for(s in obj) {
+        myt.append(s +":" + obj[s] + '<br>');
+    }
+
+</script>
+</body>
+</html>

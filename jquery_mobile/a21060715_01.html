@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=divice-width, initial-scale=1">
+    <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile.theme-1.4.5.css">
+    <script src="lib/jquery-1.12.3.js"></script>
+    <script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+
+
+<div class="" data-role="page" id="page1"
+data-theme="a"
+>
+    <div data-role="header" data-position="fixed">
+        <h1>My Header</h1>
+
+    </div>
+    <div role="main" class="ui-content" >
+        <p>第一頁</p>
+        <p>sdfsdfs</p>
+        <p>
+            <a href="#page2"
+               data-rel="dialog"
+               data-role="button"
+               data-icon="home"
+               data-iconpos="top"
+               data-transition="slide">
+            連到第二頁</a>
+        </p>
+
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1" data-role="button">首頁</a></li>
+                <li><a href="#">產品</a></li>
+                <li><a href="#">測試</a></li>
+            </ul>
+            
+        </div>
+    </div>
+
+
+</div>
+
+<div class="" data-role="page" id="page2">
+    <div data-role="header"
+         data-position="fixed"
+         data-add-back-btn="true"
+         data-back-btn-text="返回"
+    >
+        <a href="#" data-rel="back">返回</a>
+        <h1>My Header</h1>
+
+    </div>
+    <div role="main" class="ui-content" >
+        <p>第二頁</p>
+        <p>sdfsdfs</p>
+        <p>sdfsdfs</p>
+        <p><a href="#page1" data-transition="slideup">連到第一頁</a></p>
+
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+        <h4>fOOter</h4>
+    </div>
+
+
+</div>
+
+</body>
+</html>

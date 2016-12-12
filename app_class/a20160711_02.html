@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script>
+        //$(function(){
+
+            console.log( $('#midiv').text());
+
+
+        //});
+
+    </script>
+
+</head>
+<body>
+
+
+
+
+
+<table id="myt" border="1">
+    <tr>
+        <td>10</td>
+    </tr>
+</table>
+
+
+
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    var myt = $('#myt');
+
+    for(var i=0; i<5; i++){
+
+
+        myt.prepend('<tr><td>'+i+'</td></tr>');
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+
+<table id="myt" border="1">
+    <tr>
+        <td> <button>del</button></td>
+        <td>bill</td>
+        <td class="my">23</td>
+    </tr>
+    <tr>
+        <td><button>del</button></td>
+        <td>carl</td>
+        <td class="my">40</td>
+    </tr>
+    <tr>
+        <td><button>del</button></td>
+        <td>aaron</td>
+        <td class="my">35</td>
+    </tr>
+    <tr>
+        <td> <button>del</button></td>
+        <td>bill</td>
+        <td class="my">23</td>
+    </tr>
+    <tr>
+        <td><button>del</button></td>
+        <td>carl</td>
+        <td class="my">40</td>
+    </tr>
+    <tr>
+        <td><button>del</button></td>
+        <td>aaron</td>
+        <td class="my">35</td>
+    </tr>
+</table>
+
+
+
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    console.log( $('.my'));
+
+    var total = 0;
+    $('.my').each(function(){
+        total += parseInt( $(this).text() );
+    });
+
+    console.log(total);
+
+
+    $('button').click(function(){
+        $(this).closest('tr').remove();
+
+
+    });
+    /*
+     shinder.lin@gmail.com
+     林新德
+     */
+
+</script>
+</body>
+</html>

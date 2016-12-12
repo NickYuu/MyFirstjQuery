@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="rect">
+    <!--<div class="ball"></div>-->
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var rect = $('.rect');
+    var str = "溜馬在保羅喬治的39分、8籃板、8助攻帶領下領先將近42分鐘";
+    var ar = str.split('');
+    var cr = [82, 31, 100, 53, 79];
+    var dr = ar.slice(); // ar.concat()
+
+
+    rect.append( ar.join('---') + '<br>' );
+    rect.append( ar.slice(3, 7) + '<br>' );
+    rect.append( ar.reverse() + '<br>' );
+    rect.append( ar.slice().sort() + '<br>' );
+    rect.append( cr.sort() + '<br>' );
+
+
+
+</script>
+</body>
+</html>

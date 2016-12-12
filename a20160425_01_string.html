@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+
+
+
+<script src="lib/jquery-3.1.1.min.js"></script>
+
+<div class="my">1123</div>
+
+<script>
+    $('.my').text('Abc');
+
+</script>
+
+<script>
+    'use strict';
+    var b =456;
+    var str = "國民隊台北時間25日與雙aBcD";
+    var mydiv = $('#mydiv');
+
+    mydiv.append( str.charAt(1) +'<br>' );
+    mydiv.append( str.length  +'<br>');
+
+    mydiv.append( str.toUpperCase() +'<br>' );
+    mydiv.append( str.slice(3, 7) +'<br>' );
+    mydiv.append( str +'<br>' );
+    mydiv.append( str.split('台北').join('高雄') +'<br>' );
+
+
+
+</script>
+</body>
+</html>

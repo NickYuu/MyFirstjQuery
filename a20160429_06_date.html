@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="rect">
+    <div class="ball">1</div>
+    <div class="ball" style="left:100px;top:100px">2</div>
+    <div class="ball" style="left:200px;top:100px">3</div>
+</div>
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    var rect = $('.rect');
+
+    // var now = new Date(2016, 3, 28); //四月
+    var now = new Date();
+
+    rect.text( now.getHours()+":"+now.getMinutes()+":"+now.getSeconds() );
+
+
+
+
+</script>
+</body>
+</html>

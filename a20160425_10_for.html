@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table id="myt" border="1">
+</table>
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+
+    var i, k, el;
+    var myt = $('#myt');
+    for(i=1; i<10; i++) {
+        el = $('<tr></tr>');
+        for (k = 1; k < 10; k++) {
+            el.append('<td>' + i*k + '</td>');
+        }
+        myt.append(el);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cont {
+            width: 600px;
+            height:600px;
+            background-color: #b7b7b7;
+
+            position: relative;
+
+        }
+        .ball {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+            line-height: 30px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="cont">
+
+</div>
+
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+
+    var ballNum = 12;
+    var unitAng = Math.PI*2 / ballNum; // radian
+    var ball,
+        cont=$('.cont'),
+        bx, by;
+
+    for(var i=0; i<ballNum; i++){
+        ball = $('<div class="ball">'+(i+1)+'</div>');
+
+        bx = 300+Math.cos(unitAng*i)*200;
+        by = 300+Math.sin(unitAng*i)*200;
+        ball.css({left: bx, top:by});
+
+
+        cont.append(ball);
+
+
+
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

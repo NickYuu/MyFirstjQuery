@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text" id="ia">
+    <button type="button" id="btn">Click</button>
+</form>
+
+<div id="mydiv"></div>
+
+
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    $('#btn').click(function(){
+        var g;
+        var ia = parseInt( $('#ia').val() );
+        var ib = parseInt( ia/10 );
+
+        switch(ib) {
+            case 10:
+            case 9:
+                g = 'A';
+                break;
+            case 8:
+                g = 'B';
+                break;
+            case 7:
+                g = 'C';
+                break;
+            case 6:
+                g = 'D';
+                break;
+            default:
+                g = 'F';
+        }
+
+
+        $('#mydiv').text( g );
+    });
+
+</script>
+</body>
+</html>

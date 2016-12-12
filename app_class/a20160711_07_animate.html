@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cont {
+            width: 600px;
+            height:400px;
+            background-color: #b7b7b7;
+
+            position: relative;
+
+        }
+        .ball {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: red;
+            left: 50px;
+            top: 30px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="cont">
+    <div class="ball"></div>
+    <div class="ball" style="left:300px;top:90px;background-color: blue"></div>
+</div>
+
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+
+
+    $('.ball').eq(0).animate(
+            {left:300, opacity:0.5, top:100},
+            1000,
+            function(){
+                console.log('complete');
+            }
+    );
+    $('.ball').eq(1).animate({left:300, opacity:0.5, top:300},1000);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<form name ="form1" action="" method="get" onSubmit="return checkForm()">
+
+    <input type="text" name="name" id="name"><br>
+    <input type="text" name="email" id="email"><br>
+
+    <button type="submit">送出</button>
+
+
+
+</form>
+
+<button onclick="myClick(event)">123</button>
+
+
+<script src="../lib/jquery-1.12.3.js"></script>
+<script>
+$(function(){
+     window.checkForm = function(){
+        var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(form1.name.value.length<3){
+            alert('名稱太短');
+            return false;
+        }
+        if(! pattern.test(form1.email.value)){
+            alert('email 格式錯誤');
+            return false;
+        }
+
+        //form1.submit();
+
+         $.post('a.php', $(form1).serialize(), function(data){
+
+         });
+
+        return false;
+    };
+
+});
+
+
+
+
+    function myClick(evt){
+        alert(evt.target);
+
+
+    }
+
+/*
+
+ accepted
+ Using regular expressions is probably the best way. You can see a bunch of tests here (taken from chromium)
+
+ function validateEmail(email) {
+ var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ return re.test(email);
+ }
+ */
+
+</script>
+
+</body>
+</html>

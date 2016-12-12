@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div id="myd">
+
+</div>
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script>
+
+    $.get('teacher_test/test02.html', function(data){
+        $('#myd').html(data);
+    });
+/*
+
+ python -m SimpleHTTPServer 8000
+ */
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="rect">
+    <!--<div class="ball"></div>-->
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, x, y;
+    var ar = [];
+    var rect = $('.rect');
+
+    for(i=0; i<20; i++) {
+        ar.push(i+1);
+    }
+    rect.html( ar.join('<br>') );
+
+</script>
+</body>
+</html>

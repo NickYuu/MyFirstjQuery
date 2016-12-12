@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div id="myd">
+
+</div>
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script>
+
+    $.get('teacher_test/test01.txt', function(data){
+        $('#myd').text(data);
+    });
+
+</script>
+
+
+
+</body>
+</html>

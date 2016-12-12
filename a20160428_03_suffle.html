@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="rect">
+    <!--<div class="ball"></div>-->
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var rect = $('.rect');
+    var i,
+            ar = [],
+            rnd,
+            br,
+            cr = [],
+            dr = [];
+
+    for(i=1; i<=46; i++) {
+        ar.push(i);
+    }
+
+    while(ar.length) {
+        rnd = parseInt( Math.random()* ar.length );
+        br = ar.splice(rnd, 1);
+        cr.push( br[0]);
+        dr.push( br);
+    }
+
+    rect.append( cr + '<br>' );
+    console.log(cr);
+    console.log(dr);
+
+
+
+</script>
+</body>
+</html>

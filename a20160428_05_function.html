@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="rect">
+
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var rect = $('.rect');
+
+    rect.append( func(7,8) *10 + '<br>');
+
+    function func(a, b) {
+        //rect.append(a + b + '<br>');
+        return a+b;
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+            position: absolute;
+         }
+        .ball-pic {
+            position: absolute;
+            /*pointer-events: none;*/
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #7985ff;
+            line-height: 60px;
+            text-align: center;
+            border: solid 1px #000000;
+            left: -30px;
+            top: -30px;
+        }
+        .big-ball {
+            position: absolute;
+            left: 360px;
+            top: 260px;
+        }
+        .big-ball-pic {
+            position: absolute;
+            /*pointer-events: none;*/
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #2945ff;
+            line-height: 60px;
+            text-align: center;
+            left: -40px;
+            top: -40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <div class="big-ball">
+        <div class="big-ball-pic"></div>
+    </div>
+    <div class="ball">
+        <div class="ball-pic">1</div>
+    </div>
+    <div class="ball" style="left:200px">
+        <div class="ball-pic">2</div>
+    </div>
+    <div class="ball" style="top:200px">
+        <div class="ball-pic">3</div>
+    </div>
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    'use strict';
+    var i,
+            ball = $('.ball'),
+            x, y;
+    var rect = $('.rect');
+    var bball = $('.big-ball');
+    var dx, dy, myTarget;
+
+    var mouseDown = function(event){
+        myTarget = $(event.currentTarget);
+
+        rect.append(myTarget);
+        dx = event.offsetX-30;
+        dy = event.offsetY-30;
+        $(window).on('mousemove', mouseMove);
+    };
+    var mouseUp = function(event){
+        $(window).off('mousemove');
+
+        var tx = myTarget.position().left;
+        var ty = myTarget.position().top;
+        var ex = bball.position().left;
+        var ey = bball.position().top;
+
+        var dx = tx-ex;
+        var dy = ty-ey;
+
+        var distance = Math.pow( dx*dx+dy*dy, .5);
+
+        if(distance<50){
+            myTarget.css({left:ex, top:ey});
+            myTarget.fadeOut();
+        }
+
+    };
+    var mouseMove = function(event){
+        myTarget.css({
+            left:event.pageX-dx,
+            top:event.pageY-dy
+        });
+    };
+
+    ball.mousedown(mouseDown);
+    $(window).mouseup(mouseUp);
+
+</script>
+</body>
+</html>

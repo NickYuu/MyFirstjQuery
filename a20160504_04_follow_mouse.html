@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #7985ff;
+            line-height: 60px;
+            text-align: center;
+         }
+        .big-ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #2945ff;
+            line-height: 60px;
+            text-align: center;
+            left: 360px;
+            top: 260px;
+        }
+        #myc {
+            position: absolute;
+            pointer-events: none;
+            background-image: url("img/21865_1.png");
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <div class="big-ball">
+        <!--<div class="ball" onclick="console.log(event)">-->
+        <div class="ball">
+        </div>
+    </div>
+</div>
+<button>test</button>
+
+
+<div id="myc"></div>
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, x, y;
+    var rect = $('.rect');
+    var tx=0, ty=0;
+    var myc = $('#myc');
+
+    $(window).mousemove(function(event){
+        // $('#myc').css({left:event.clientX-16, top:event.clientY-16});
+        tx = event.clientX - 16;
+        ty = event.clientY - 16;
+    });
+
+    var moveMyCursor = function(){
+        //myc.css({left:tx, top:ty});
+
+        var nx = myc.position().left;
+        var ny = myc.position().top;
+        var dx = (tx - myc.position().left)*0.15;
+        var dy = (ty - myc.position().top)*0.15;
+
+        myc.css({left:nx+dx, top:ny+dy});
+
+        setTimeout(moveMyCursor, 30);
+    };
+    moveMyCursor();
+
+</script>
+</body>
+</html>

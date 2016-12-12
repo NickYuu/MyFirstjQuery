@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #7985ff;
+            line-height: 60px;
+            text-align: center;
+            /*left: 0px;*/
+            /*top: 0px;*/
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="rect">
+    <!--<div class="ball"></div>-->
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var i, ball, x, y;
+    var rect = $('.rect');
+
+    for(i=0; i<13; i++) {
+        x = i%6;
+        y = parseInt(i/6);
+
+        ball = $('<div class="ball"></div>');
+        ball.css({left:10+x*70, top:10+80*y});
+        ball.text(i);
+        rect.append(ball);
+    }
+
+
+</script>
+</body>
+</html>

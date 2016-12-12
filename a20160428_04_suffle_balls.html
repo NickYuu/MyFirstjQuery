@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #ffc5e3;
+        }
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #7985ff;
+            line-height: 60px;
+            text-align: center;
+            /*left: 0px;*/
+            /*top: 0px;*/
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="rect">
+
+</div>
+
+
+
+<script src="lib/jquery-1.12.3.js"></script>
+
+<script>
+    'use strict';
+    var rect = $('.rect');
+    var i, ball,
+            ar = [],
+            rnd,
+            br,
+            cr = [],
+            dr = [];
+
+    for(i=1; i<=46; i++) {
+        ar.push(i);
+    }
+
+    while(ar.length) {
+        rnd = parseInt( Math.random()* ar.length );
+        br = ar.splice(rnd, 1);
+        cr.push( br[0]);
+        dr.push( br);
+    }
+
+//    rect.append( cr + '<br>' );
+    console.log(cr);
+    console.log(dr);
+
+    for(i=0; i<10; i++) {
+
+        ball = $('<div class="ball"></div>');
+        ball.css({left:10+i*70, top:80, display:'none'});
+        ball.text(cr[i]);
+        ball.delay(400*i).fadeIn();
+        rect.append(ball);
+    }
+
+</script>
+</body>
+</html>
