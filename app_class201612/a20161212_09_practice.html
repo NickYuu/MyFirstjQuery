@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+
+</head>
+<body>
+
+<form action="">
+    <input type="text" title="請輸入姓名" disabled class="s1" value="guest">
+    <button id="btn" type="button">click</button>
+</form>
+<div class="info">
+
+</div>
+
+<script>
+    $('#btn').click(function(){
+
+        var title = $('input').attr('title');
+        $('.info').append(title);
+
+        $('input').removeAttr('disabled');
+
+
+
+    });
+
+
+
+</script>
+</body>
+</html>
