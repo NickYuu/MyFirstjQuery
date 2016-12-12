@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+
+    <style>
+        .c1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background-color: #456f9a;
+        }
+        .c2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: #3e9a30;
+            border-radius: 50%;
+        }
+        .c3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #9a3c1f;
+            left: 100px;
+            top: 100px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<div class="c1">
+    <div class="c2">
+        <div class="c3"></div>
+    </div>
+</div>
+
+
+
+<script>
+//$('.c1').click(function(){
+//
+//});
+
+$('.c1').on('click', function(event){
+    console.log(event);
+
+
+
+});
+$('.c3').on('click', function(event){
+    console.log('c3');
+
+});
+
+
+</script>
+</body>
+</html>
