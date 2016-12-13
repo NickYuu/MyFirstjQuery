@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+
+    <style>
+        .ball {
+            width:50px;
+            height: 50px;
+            /*border-radius: 50%;*/
+            background-color: #00a0df;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mydiv">
+    <div class="ball">a1</div>
+    <div class="ball">a2</div>
+    <div class="ball">a3</div>
+</div>
+
+
+<script>
+    var i;
+    var mydiv = $('.mydiv');
+
+    // $('.ball').css('border-radius', '50%');
+
+    $('.ball').click(function(){
+        $(this).css('border-radius', '50%');
+    });
+
+    for(i=1; i<=5; i++){
+
+        //mydiv.append('<div class="ball">'+i+'</div>');
+        mydiv.prepend('<div class="ball">'+i+'</div>');
+
+    }
+
+    // $('.ball').css('border-radius', '50%');
+
+
+</script>
+</body>
+</html>

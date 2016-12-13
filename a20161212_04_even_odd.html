@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+</head>
+<body>
+<!-- table>tr*8>td*2 -->
+
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>14</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>16</td>
+    </tr>
+</table>
+
+
+<script>
+    $('tr:even').css('background-color', '#FF0000');
+    // 上一層裡的第一個元素
+    $('tr > td:first-child').css('background-color', '#FFFF00');
+
+    // 取得的所有元素裡的第一個元素
+//    $('tr > td:first').css('background-color', '#FFFF00');
+
+//    $('tr td:last').css('background-color', '#0000FF');
+
+</script>
+</body>
+</html>

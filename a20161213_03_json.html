@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+
+
+</head>
+<body>
+
+<div class="mydiv">
+
+</div>
+<textarea id="txt" cols="30" rows="10"></textarea>
+
+
+<script>
+
+    var person = {
+        name: 'Bill',
+        age: 22,
+        gender: 'male'
+    };
+
+    var str = JSON.stringify(person);
+
+    $('#txt').val(str);
+
+    console.log( JSON.parse(str) );
+
+
+
+
+
+</script>
+</body>
+</html>

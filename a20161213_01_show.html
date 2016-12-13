@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .c1 {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #a3d3de;
+        }
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<button>click</button>
+
+<div class="c1">
+    前中央氣象局氣象預報中心主任吳德榮表示，今天白天最高氣溫可回升至攝氏26至29度，日夜溫差很大。今晚氣溫開始下降，週三(14日)晚大約可降至接近「大陸冷氣團」的標準，並持續影響至週六(17日)清晨。
+<br>
+    吳德榮在氣象應用推廣基金會專欄「洩天機教室」指出，今晨由於天氣穩定晴朗，即使大氣是偏暖的，夜間地表長波輻射的作用很大，清晨各地氣溫降得比冷空氣未減弱時還低(宜蘭15、4、嘉義15.5度)。白天太陽的短波加熱，最高氣溫又可回升至26至29度，日夜溫差很大，應該要注意。
+
+</div>
+<div class="info">123</div>
+
+
+<script>
+    $('button').click(function(){
+        //$('.c1').hide();
+        //$('.c1').toggle();
+        // $('.c1').slideToggle();
+        $('.c1').fadeToggle();
+
+    });
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
