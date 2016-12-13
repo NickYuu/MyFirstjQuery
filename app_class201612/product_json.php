@@ -13,5 +13,7 @@ while($row=$result->fetch_assoc()){
     $data[] = $row;
 }
 
+header('Access-Control-Allow-Origin: *');
+
 echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 
