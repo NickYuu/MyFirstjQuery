@@ -12,30 +12,49 @@
 <body>
 
 <div data-role="page" id="page1">
-    <div data-role="header">
+    <div data-role="header" data-fullscreen="true">
         <h1>First Page</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn-active">one</a></li>
+                <li><a href="#">two</a></li>
+                <li><a href="#">three</a></li>
+            </ul>
+        </div>
+
     </div>
-    <div role=“main” class="ui-content">
+    <div role="main" class="ui-content">
         <p>第一頁的內容</p>
-        <a href="#page2">page2</a>
+        <a href="#page2" data-transition="slide">page2</a>
     </div>
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h4>Page Footer</h4>
     </div>
 </div>
 
 
 <div data-role="page" id="page2">
-    <div data-role="header">
+    <div data-role="header" data-fullscreen="true"
+     data-add-back-btn="true"
+     data-back-btn-text="返回"
+    >
         <h1>First Page</h1>
     </div>
-    <div role=“main” class="ui-content">
+    <div role="main" class="ui-content">
         <p>第二頁的內容</p>
         <p>頁面內如出現區</p>
         <a href="#page1">page1</a>
     </div>
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h4>Page Footer</h4>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn-active">one</a></li>
+                <li><a href="#">two</a></li>
+                <li><a href="#">three</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
