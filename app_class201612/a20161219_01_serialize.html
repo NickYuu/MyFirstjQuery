@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<form name="form1" id="form1">
+    Name:<br>
+    <input type="text" name="name"><br>
+
+    Email:<br>
+    <input type="text" name="email"><br>
+
+    Password:<br>
+    <input type="password" name="password"><br>
+
+</form>
+
+
+
+<p><button>click</button></p>
+
+<div class="container">
+
+</div>
+<script>
+    $('button').click(function(){
+
+        $('.container').text( $('#form1').serialize() );
+
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<products>
+    <product>
+        <id>p001</id>
+        <name>馬克杯</name>
+        <price>210</price>
+    </product>
+
+    <product>
+        <id>p002</id>
+        <name>保溫杯</name>
+        <price>500</price>
+    </product>
+</products>
