@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.1.1.js"></script>
+</head>
+<body>
+
+
+
+<p><button>click</button></p>
+
+<div class="container">
+
+</div>
+<script>
+
+    var a = 10;
+
+    alert('ABC:'+a);
+
+    (function(){
+        var a = 200;
+        alert('DEF:'+a);
+    })();
+
+    alert('GHI:'+a);
+
+    (function(a){
+        alert('JKL:'+a);
+    })(567);
+
+    (function(a){
+        alert('JKL:'+a);
+    }(123));
+
+</script>
+</body>
+</html>
