@@ -12,6 +12,14 @@
 <body>
 
 <div data-role="page" id="page1">
+
+    <div data-role="panel" id="my_panel">
+        <p>Panel Content</p>
+
+    </div>
+
+
+
     <div data-role="header" data-fullscreen="true">
         <h1>First Page</h1>
 
@@ -26,10 +34,54 @@
     </div>
     <div role="main" class="ui-content">
         <p>第一頁的內容</p>
-        <a href="#page2" data-transition="slide">page2</a>
+
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" data-role="button"
+               class="ui-btn-active"
+               data-inline="true">one</a>
+            <a href="#" data-role="button" data-inline="true">two</a>
+            <a href="#basicPopup" data-role="button"
+               data-rel="popup"
+               data-position-to="window"
+               data-inline="true">show</a>
+        </div>
+
+        <a href="#my_panel"
+             data-role="button"
+             data-inline="true">開啟 panel</a>
+
+        <a href="#page2" data-rel="dialog">page2</a>
+
+
+        <div data-role="popup" id="basicPopup">
+            <a href="#" data-rel="back"
+               class="ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right"
+            ></a>
+            <p>popup 內容</p>
+        </div>
+
+
     </div>
     <div data-role="footer" data-position="fixed">
-        <h4>Page Footer</h4>
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="#" class="ui-btn-active"
+                        data-icon="home"
+                    >one</a>
+                </li>
+                <li>
+                    <a href="#"
+                       data-icon="star"
+                    >two</a>
+                </li>
+                <li>
+                    <a href="#"
+                       data-icon="gear"
+                    >three</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -45,6 +97,21 @@
         <p>第二頁的內容</p>
         <p>頁面內如出現區</p>
         <a href="#page1">page1</a>
+
+
+        <div data-role="collapsible">
+            <h3>I'm a header</h3>
+            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        </div>
+        <div data-role="collapsible">
+            <h3>I'm a header</h3>
+            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        </div>
+        <div data-role="collapsible">
+            <h3>I'm a header</h3>
+            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        </div>
+
     </div>
     <div data-role="footer" data-position="fixed">
         <h4>Page Footer</h4>
