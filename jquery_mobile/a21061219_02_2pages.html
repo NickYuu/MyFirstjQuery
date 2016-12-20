@@ -60,6 +60,51 @@
             <p>popup 內容</p>
         </div>
 
+        <form action="">
+            <div class="ui-field-contain">
+                <label for="mydate">日期
+                </label>
+                <input type="date" name="mydate" id="mydate">
+
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="mynum">數量
+                </label>
+                <input type="number" name="mynum" id="mynum">
+
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="checkbox1">Hello
+                </label>
+                <input type="checkbox" name="checkbox1" id="checkbox1">
+
+            </div>
+
+        </form>
+
+
+        <table data-role="table" id="movie-table" class="ui-responsive" data-mode="columntoggle">
+            <thead><tr>
+                <th data-priority="1">Rank</th>
+                <th data-priority="persist">Movie Title</th>
+                <th data-priority="2">Year</th>
+                <th data-priority="3">Rating</th>
+                <th data-priority="4">Reviews</th>
+            </tr></thead>
+            <tbody>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+            </tr>
+            </tbody>
+
+
+        </table>
 
     </div>
     <div data-role="footer" data-position="fixed">
@@ -98,20 +143,20 @@
         <p>頁面內如出現區</p>
         <a href="#page1">page1</a>
 
-
-        <div data-role="collapsible">
-            <h3>I'm a header</h3>
-            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>I'm a header</h3>
+                <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>I'm a header</h3>
+                <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>I'm a header</h3>
+                <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+            </div>
         </div>
-        <div data-role="collapsible">
-            <h3>I'm a header</h3>
-            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
-        </div>
-        <div data-role="collapsible">
-            <h3>I'm a header</h3>
-            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
-        </div>
-
     </div>
     <div data-role="footer" data-position="fixed">
         <h4>Page Footer</h4>
